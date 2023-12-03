@@ -1,0 +1,128 @@
+body{
+  background-color: rgb(144, 193, 253);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header h1{
+display: flex;
+align-items: center;
+justify-content: center;
+margin: 25px auto;
+/* color: white; */
+font-size: 35px;
+}
+
+.dashboard{
+  display: flex;
+  justify-content: center;
+}
+
+.container1 {
+display: flex;
+justify-content: space-around;
+}
+
+.box1{
+width: 300px;
+height: 300px;
+background-color: white;
+border-radius: 20px;
+box-shadow: 5px 5px 10px gray;
+padding: 10px 20px;
+position: relative;
+margin: 20px;
+display: flex;
+flex-direction: column;
+}
+
+.box1 h2{
+margin: 10px 0px 0px 0px;
+font-size: 30px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.datetime{
+margin: 10px 50px;
+display: contents;
+justify-content: center;
+align-items: center;
+}
+
+.datetime h3 {
+  margin-left: 30px;
+}
+
+
+.datetime p{
+margin: 15px 0px 0px 0px;
+font-size: 22px;
+font-weight: 900;
+}
+
+.tempsymbol{
+margin-top: 20px;
+margin-left: 38px;
+padding:0px;
+}
+
+
+/* Gaya dasar untuk tabel */
+table {
+width: 100%;
+border-collapse: collapse;
+}
+
+/* Gaya header tabel */
+th {
+background-color: #f2f2f2;
+text-align: left;
+padding: 10px;
+}
+
+/* Gaya sel tabel (baris data) */
+td {
+text-align: left;
+padding: 10px;
+border-bottom: 1px solid #ddd;
+}
+
+/* Gaya sel tabel untuk data angka (tinggi air) */
+td.numeric {
+text-align: left;
+padding-right: 10px;
+}
+
+/* Gaya untuk pesan jika tidak ada data */
+td.colspan {
+text-align: center;
+}
+
+.container {
+  display: flex;
+  padding: 2px;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  flex-grow: 1;
+
+  background-color: #FBDD1C;
+  margin: 4px;
+  padding: 2px;
+  border: 2px solid black;
+  border-radius: 10px;
+  text-align: center;
+}
