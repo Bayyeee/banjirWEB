@@ -1,0 +1,294 @@
+body{
+    background-image: linear-gradient(to right, #d7d2cc 0%, #304352 100%);
+    font-family: 'Roboto Slab', sans-serif;
+    font-weight: 500;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 25px auto;
+    /* color: white; */
+    font-size: 35px;
+}
+
+.dashboard{
+    display: flex;
+    justify-content: center;
+}
+
+.container1 {
+    display: flex;
+    justify-content: space-around;
+}
+
+.box3{
+    width: 290px;
+    height: auto;
+    background-image: linear-gradient(to left, #BDBBBE 0%, #9D9EA3 100%), radial-gradient(88% 271%, rgba(255, 255, 255, 0.25) 0%, rgba(254, 254, 254, 0.25) 1%, rgba(0, 0, 0, 0.25) 100%), radial-gradient(50% 100%, rgba(255, 255, 255, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%);
+    background-blend-mode: normal, lighten, soft-light;
+    border-radius: 10px;
+    border: 2px solid black;
+    padding: 10px 20px;
+    position: relative;
+    margin:8px;
+    margin-top: 30px;
+    display: compact;
+    flex-direction: column;
+}
+
+.box3 h2{
+    margin: 0px 0px 0px 0px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box4{
+    width: 520px;
+    height: 300px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px gray;
+    padding: 10px 20px;
+    position: relative;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.box4 h2{
+    margin: 10px 0px 0px 0px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box1{
+    width: 300px;
+    height: 300px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px gray;
+    padding: 10px 20px;
+    position: relative;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.box1 h2{
+    margin: 10px 0px 0px 0px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.datetime{
+    margin: 10px 50px;
+    display: contents;
+    justify-content: center;
+    align-items: center;
+}
+
+.datetime h3 {
+    margin-left: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.datetime i {
+    margin-right: 10px;
+    color: #e74c3c;
+    font-family: 'Roboto Slab', sans-serif;
+    font-weight: 500;
+}
+
+.datetime span {
+    min-width: 150px; /* Sesuaikan lebar sesuai kebutuhan */
+    display: inline-block;
+}
+
+.tempsymbol{
+    margin-top: 20px;
+    margin-left: 38px;
+    padding:0px;
+}
+
+
+/* Gaya dasar untuk tabel */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Gaya header tabel */
+th {
+    background-color: #f2f2f2;
+    text-align: left;
+    padding: 10px;
+}
+
+/* Gaya sel tabel (baris data) */
+td {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Gaya sel tabel untuk data angka (tinggi air) */
+td.numeric {
+    text-align: left;
+    padding-right: 10px;
+}
+
+/* Gaya untuk pesan jika tidak ada data */
+td.colspan {
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    padding: 2px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    flex-grow: 1;
+    background-image: linear-gradient(to left, #BDBBBE 0%, #9D9EA3 100%), radial-gradient(88% 271%, rgba(255, 255, 255, 0.25) 0%, rgba(254, 254, 254, 0.25) 1%, rgba(0, 0, 0, 0.25) 100%), radial-gradient(50% 100%, rgba(255, 255, 255, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%);
+    background-blend-mode: normal, lighten, soft-light;
+    margin: 2px;
+    padding: 2px;
+    border: 2px solid black;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.box h2{
+    margin: 20px 0px 20px 0px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box2 {
+    flex-grow: 1;
+    background-color: #ffff00;
+    margin: 4px;
+    padding: 2px;
+    border: 2px solid black;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.btn2 {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #04AA6D;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+
+.btn2:hover{
+    background-color: #3e8e41
+}
+
+.btn2:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+
+.stat{
+    font-size: large;
+    font-weight: bold;
+}
+
+@media (min-width: 992px){
+    .typo-line{
+        padding-left: 140px;
+        margin-bottom: 40px;
+        position: relative;
+    }
+
+    .typo-line .category{
+        transform: translateY(-50%);
+        top: 50%;
+        left: 0px;
+        position: absolute;
+    }
+}
+
+.all-icons [class*="pe-"]{
+    font-size: 40px;
+}
+.all-icons input{
+    border: 0;
+}
+.all-icons .font-icon-detail{
+    text-align: center;
+    padding: 45px 0px 30px;
+    border: 1px solid #e5e5e5;
+    border-radius: 6px;
+    margin: 15px 0;
+}
+.all-icons .font-icon-detail input{
+    margin: 25px auto 0;
+    width: 100%;
+    text-align: center;
+    display: block;
+    color: #aaa;
+    font-size: 13px;
+}
+
+#map{
+    position:relative;
+    width:100%;
+    height: calc(100% - 60px);
+}
+
+.places-buttons .btn{
+    margin-bottom: 30px
+}
+.sidebar .nav > li.active-pro{
+    position: absolute;
+    width: 100%;
+    bottom: 10px;
+}
+.sidebar .nav > li.active-pro a{
+    background: rgba(255, 255, 255, 0.14);
+    opacity: 1;
+    color: #FFFFFF;
+}
+
+.table-upgrade td:nth-child(2),
+.table-upgrade td:nth-child(3){
+    text-align: center;
+}
+
+@media all and (max-width: 991px)  {
+    .sidebar .nav > li.active-pro{
+        position: initial;
+    }
+}

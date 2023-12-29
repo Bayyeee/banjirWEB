@@ -4,12 +4,12 @@ function getData(location) {
         .then(str => (new window.DOMParser()).parseFromString(str, "text/xml"))
         .then(data =>{
             // Membuat Array untuk menyimpan data
-            var timeArray = [];
-            var temArray = [];
-            var humArray = [];
-            var winddirArray = [];
-            var windspeedArray = [];
-            var weatherArray = [];
+            const timeArray = [];
+            const temArray = [];
+            const humArray = [];
+            const winddirArray = [];
+            const windspeedArray = [];
+            const weatherArray = [];
 
             //Mendefinisikan Path
             pathTem = `data/forecast/area[@description="${location}"]/parameter[@id="t"]/timerange/value[@unit="C"]`;
@@ -70,7 +70,7 @@ function getData(location) {
                 dataHours +=`
                     <div class="box">
                         <h3>${hour}.00</h3>
-                        <img src="icon/w_${parseInt(weatherArray[i])}.png" width="85px"><br>
+                        <img src="/assets/icon/w_${parseInt(weatherArray[i])}.png" width="85px"><br>
                         <i class="fas fa-temperature-high"></i> ${temArray[i]}<sup>o</sup>C<br>
                         <i class="fas fa-tint"></i> ${humArray[i]}%<br>
                         <i class="fas fa-location-arrow"></i> ${winddirArray[i]}<sup>o</sup><br>
@@ -92,8 +92,8 @@ function weatherPanel(locations) {
     body = "";
     for(i = 0; i < locations.length; i++){
         body += `
-            <h1 align="center">Cuaca Terkini</h1>
-            <div class="container"><div class="box"><h1>${locations[i]}</h1></div></div>
+            <div class="container"><div class="box3"><h2 align="center" style="font-size: 30px; opacity: inherit">Cuaca Terkini</h2></div></div>
+            <div class="container"><div class="box"><h2>${locations[i]}</h2></div></div>
             <div class="container" id="days${locations[i]}"></div>
             <div class="container" id="dataHours${locations[i]}"></div>
         `;
@@ -120,14 +120,13 @@ function timeout() {
 
 function timeout2() {
     setTimeout(function () {
-        weather(["Kota Bogor", "Depok", "Bandung"])
+        weather(["Banjarbaru", "Marabahan", "Kandangan"])
         timeout();
     }, 20000);
 }
 
-weather(["Cikarang", "Bekasi", "Cibinong"])
+weather(["HSS", "HSU", "HST"])
 timeout()
-
 
 */
 

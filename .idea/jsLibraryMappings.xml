@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavaScriptLibraryMappings">
+    <file url="PROJECT" libraries="{Animated, Chart.js, chart.js, de_DE, font-awesome, germanyLow, index, notosans-sc, pro, xy}" />
+  </component>
+</project>
