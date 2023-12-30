@@ -1,14 +1,11 @@
 <?php
-$host = 'localhost';
-$user = 'jack';
-$pass = 'sayangbunda0098';
-$dbname = 'banjir';
+$server = "localhost";
+$username = "root";
+$password = "";
+$database = "banjir";
 
-// Buat koneksi ke database
-$koneksi = new mysqli($host, $user, $pass, $dbname);
+$koneksi = mysqli_connect($server,$username,$password,$database);
 
-// Periksa koneksi
-if ($koneksi->connect_error) {
-    die('Koneksi database gagal: ' . $koneksi->connect_error);
+if (mysqli_connect_error()) {
+    echo "database gagal terhubung";
 }
-

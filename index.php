@@ -57,7 +57,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="statistik.php">
+                    <a href="stati.php">
                         <i class="pe-7s-graph2"></i>
                         <p>Statistics</p>
                     </a>
@@ -66,11 +66,6 @@
                     <a href="https://maps.app.goo.gl/fQV3WYaxogNkRsjr6" target="_blank">
                         <i class="pe-7s-map"></i>
                         <p>Location</p>
-                    </a>
-                </li>
-                <li >
-                    <a href="src/config/koneksi.php">
-                        test database
                     </a>
                 </li>
             </ul>
