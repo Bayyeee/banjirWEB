@@ -1,6 +1,3 @@
-<?php
-    include 'src/config/koneksi.php';
-?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -22,7 +19,6 @@
     <!--  Light Bootstrap Table core CSS    -->
     <link href="assets/css/light-bootstrap-dashboard.css?v=1.4.0" rel="stylesheet"/>
 
-
     <!--  CSS for Demo Purpose, don't include it in your project     -->
     <link href="assets/css/style.css" rel="stylesheet" />
 
@@ -37,10 +33,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
 
     <!-- Chart untuk statistik -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom"></script>
 </head>
 
 <body>
+<?php
+include "src/config/koneksi.php";
+?>
 <div class="wrapper">
     <!-- Untuk SideBar -->
     <div class="sidebar" data-color="" data-image="assets/img/banjarmasin.png">
@@ -102,7 +106,7 @@
                             </div>
                             <div class="content">
                                 <div class="ct-chart">
-
+                                    <canvas id="iotChartContainer"></canvas>
                                 </div>
                             </div>
                         </div>
@@ -142,61 +146,8 @@
                 </nav>
             </div>
         </footer>
-
     </div>
 </div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js" integrity="sha512-L0Shl7nXXzIlBSUUPpxrokqq4ojqgZFQczTYlGjzONGTDAcLremjwaWv5A+EDLnxhQzY5xUZPWLOLqYRkY0Cbw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script>
-    const data = {
-        labels: [
-            'Red',
-            'Blue',
-            'Yellow'
-        ],
-        datasets: [{
-            label: 'My First Dataset',
-            data: [300, 50, 100],
-            backgroundColor: [
-                'rgb(255, 99, 132)',
-                'rgb(54, 162, 235)',
-                'rgb(255, 205, 86)'
-            ],
-            hoverOffset: 4
-        }]
-    };
-
-    const config = {
-        type: 'pie',
-        data: data,
-    };
-
-    const myChart = new Chart(
-        document.getElementById('myChart'),
-        config
-    )
-
-</script>
-</body>
-
-<!--   Core JS Files   -->
-<script src="assets/js/jquery.3.2.1.min.js" type="text/javascript"></script>
-<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
-
-<!--  Charts Plugin -->
-<script src="assets/js/chartist.min.js"></script>
-
-<!--  Notifications Plugin    -->
-<script src="assets/js/bootstrap-notify.js"></script>
-
-<!--  Google Maps Plugin    -->
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-
-<!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
-<script src="assets/js/light-bootstrap-dashboard.js?v=1.4.0"></script>
-
-<!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
-<script src="assets/js/demo.js"></script>
 
 <script type="text/javascript">
     $(document).ready(function(){
@@ -206,6 +157,66 @@
     });
 </script>
 
+<script>
+    function refreshCard() {
+        $.ajax({
+            url: 'grafketinggian.php',
+            type: 'GET',
+            success: function (data) {
+                // Mengganti konten grafik pada tampilan utama
+                $('#iotChartContainer').html(data);
+            },
+            error: function (error) {
+                console.error('Error loading graph:', error);
+            }
+        });
 
+        $.ajax({
+            url: 'grafik_humidity.php',
+            type: 'GET',
+            success: function (data) {
+                // Mengganti konten grafik pada tampilan utama
+                $('#iothumidity').html(data);
+            },
+            error: function (error) {
+                console.error('Error loading graph:', error);
+            }
+        });
+        $.ajax({
+            url: 'grafik_mq.php',
+            type: 'GET',
+            success: function (data) {
+                // Mengganti konten grafik pada tampilan utama
+                $('#mq2').html(data);
+            },
+            error: function (error) {
+                console.error('Error loading graph:', error);
+            }
+        });
+    }
 
+    // Merefresh card setiap 5 detik
+    setInterval(refreshCard, 5000);
+
+    // Merefresh grafik setiap 5 detik
+    setInterval(loadGraph, 5000);
+
+    // Memanggil fungsi refreshCard saat halaman pertama kali dimuat
+    $(document).ready(refreshCard);
+
+    // Memanggil fungsi loadGraph saat halaman pertama kali dimuat
+    $(document).ready(loadGraph);
+</script>
+
+<!--   Core JS Files   -->
+<script src="assets/js/jquery.3.2.1.min.js" type="text/javascript"></script>
+<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+
+<!--  Charts Plugin -->
+<script src="assets/js/chartist.min.js"></script>
+<script src="assets/js/chart.js/Chart.min.js"></script>
+
+<!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
+<script src="assets/js/light-bootstrap-dashboard.js?v=1.4.0"></script>
+</body>
 </html>
