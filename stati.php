@@ -57,20 +57,18 @@ include "src/config/koneksi.php";
                                         </ul>
                                     </div>
                                 </div>
-                                <!-- Add additional card content or body here if needed -->
                             </div>
 
 
                             <div class="card-body">
                                 <div class="row">
-                                    <!-- suhu -->
-                                    <div class="col-md-6">
-                                        <div class="card shadow mb-10">
+                                    <div class="col-md-4">
+                                        <div class="card shadow mb-8">
                                             <div class="card-body">
                                                 <div class="chart-area">
                                                     <div class="panel-body">
                                                         <div class="grafik-container">
-                                                            <div id="iotChartContainer"></div>
+                                                            <div id="ketinggianAir"></div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -78,6 +76,19 @@ include "src/config/koneksi.php";
                                         </div>
                                     </div>
                                     <!-- Tambahkan kartu lainnya jika diperlukan -->
+                                    <div class="col-md-4">
+                                        <div class="card shadow mb-8">
+                                            <div class="card-body">
+                                                <div class="chart-area">
+                                                    <div class="panel-body">
+                                                        <div class="grafik-container">
+                                                            <div id="kecepatanAir"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -93,7 +104,7 @@ include "src/config/koneksi.php";
                             type: 'GET',
                             success: function (data) {
                                 // Mengganti konten grafik pada tampilan utama
-                                $('#iotChartContainer').html(data);
+                                $('#ketinggianAir').html(data);
                             },
                             error: function (error) {
                                 console.error('Error loading graph:', error);
@@ -101,22 +112,11 @@ include "src/config/koneksi.php";
                         });
 
                         $.ajax({
-                            url: 'grafik_humidity.php',
+                            url: 'grafkecepatan.php',
                             type: 'GET',
                             success: function (data) {
                                 // Mengganti konten grafik pada tampilan utama
-                                $('#iothumidity').html(data);
-                            },
-                            error: function (error) {
-                                console.error('Error loading graph:', error);
-                            }
-                        });
-                        $.ajax({
-                            url: 'grafik_mq.php',
-                            type: 'GET',
-                            success: function (data) {
-                                // Mengganti konten grafik pada tampilan utama
-                                $('#mq2').html(data);
+                                $('#kecepatanAir').html(data);
                             },
                             error: function (error) {
                                 console.error('Error loading graph:', error);
