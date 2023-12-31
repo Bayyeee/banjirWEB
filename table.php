@@ -55,7 +55,7 @@
                     </a>
                 </li>
                 <li >
-                    <a href="statistik.php">
+                    <a href="stati.php">
                         <i class="pe-7s-graph2"></i>
                         <p>Statistics</p>
                     </a>
@@ -145,12 +145,49 @@
                                 <h4 class="title">Kecepatan Air</h4>
                             </div>
                             <div class="content table-responsive table-full-width">
-                                <table class="table table-hover table-striped">
+                                <table class="table table-hover">
                                     <thead>
                                     <th>ID</th>
                                     <th>Kecepatan Air</th>
                                     <th>Waktu</th>
                                     </thead>
+                                    <tbody>
+                                    <?php
+                                    // Koneksi ke database MySQL (Anda dapat menggunakan berkas koneksi.php)
+                                    include 'src/config/koneksi.php';
+
+                                    // Ambil nilai jumlah data dari parameter URL
+                                    $jumlahData = isset($_GET['jumlah_data']) ? $_GET['jumlah_data'] : '10';
+
+                                    // Query untuk mengambil semua data atau sesuai parameter
+                                    if ($jumlahData == 'all') {
+                                        $sql = "SELECT * FROM water_flow_data";
+                                    } else {
+                                        $sql = "SELECT * FROM water_flow_data LIMIT " . $jumlahData;
+                                    }
+
+                                    $result = $koneksi->query($sql);
+
+                                    // Periksa jika ada data yang ditemukan
+                                    if ($result->num_rows > 0) {
+                                        $lastKecepatanAir = null;
+
+                                        while ($row = $result->fetch_assoc()) {
+                                            // Cek apakah nilai tinggi_air sama dengan yang sebelumnya
+                                            if ($row["flow_rate"] != $lastKecepatanAir) {
+                                                echo "<tr>";
+                                                echo "<td>" . $row["id"] . "</td>";
+                                                echo "<td>" . $row["flow_rate"] . " L/mil</td>";
+                                                echo "<td>" . $row["timestamp"] . "</td>";
+                                                echo "</tr>";
+                                                $lastKecepatanAir = $row["flow_rate"];
+                                            }
+                                        }
+                                    } else {
+                                        echo "<tr><td colspan='3' class='colspan'>Tidak ada data kecepatan air.</td></tr>";
+                                    }
+                                    ?>
+                                    </tbody>
                                 </table>
                             </div>
                         </div>

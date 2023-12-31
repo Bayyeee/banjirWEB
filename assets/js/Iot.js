@@ -70,7 +70,7 @@ function getData(location) {
                 dataHours +=`
                     <div class="box">
                         <h3>${hour}.00</h3>
-                        <img src="/assets/icon/w_${parseInt(weatherArray[i])}.png" width="85px"><br>
+                        <img src="assets/icons/w_${parseInt(weatherArray[i])}.png" width="85px"><br>
                         <i class="fas fa-temperature-high"></i> ${temArray[i]}<sup>o</sup>C<br>
                         <i class="fas fa-tint"></i> ${humArray[i]}%<br>
                         <i class="fas fa-location-arrow"></i> ${winddirArray[i]}<sup>o</sup><br>
