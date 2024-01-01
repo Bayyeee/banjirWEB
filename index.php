@@ -149,17 +149,17 @@
                             // Koneksi ke database MySQL (Anda dapat menggunakan berkas koneksi.php)
                             include 'src/config/koneksi.php';
                             // Query untuk mengambil data terbaru dari tabel kecepatan_air
-                            $sql = "SELECT * FROM ketinggian_air ORDER BY waktu_input DESC LIMIT 1";
+                            $sql = "SELECT * FROM water_flow_data ORDER BY timestamp DESC LIMIT 1";
                             $result = $koneksi->query($sql);
                             // Periksa jika ada data yang ditemukan
                             if ($result->num_rows > 0) {
                                 $row = $result->fetch_assoc();
                                 echo "<tr>";
-                                echo "<td class='numeric'>" . $row["tinggi_air"] . " cm</td>";
-                                echo "<td>" . $row["waktu_input"] . "</td>";
+                                echo "<td class='numeric'>" . $row["flow_rate"] . " L/Mil</td>";
+                                echo "<td>" . $row["timestamp"] . "</td>";
                                 echo "</tr>";
                             } else {
-                                echo "<tr><td colspan='2' class='colspan'>Tidak ada data ketinggian air.</td></tr>";
+                                echo "<tr><td colspan='2' class='colspan'>Tidak ada data Kecepatan air.</td></tr>";
                             }
                             // Tutup koneksi ke database
                             $koneksi->close();
