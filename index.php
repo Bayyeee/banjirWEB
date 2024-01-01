@@ -62,6 +62,12 @@
                         <p>Statistics</p>
                     </a>
                 </li>
+                <li>
+                    <a href="notifikasi.php">
+                        <i class="pe-7s-graph2"></i>
+                        <p>test notifikasi</p>
+                    </a>
+                </li>
 				<li class="active-pro">
                     <a href="https://maps.app.goo.gl/fQV3WYaxogNkRsjr6" target="_blank">
                         <i class="pe-7s-map"></i>
